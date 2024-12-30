@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="rick_morty_app"><![CDATA[Rick & Morty App]]></string>
+    <string name="status">STATUS: </string>
+    <string name="species">SPECIES: </string>
+    <string name="gender">GENDER: </string>
+    <string name="origin">ORIGIN</string>
+    <string name="location">LOCATION</string>
+    <string name="episodes">EPISODES</string>
+    <string name="origin_name">NAME: </string>
+    <string name="origin_dimension">DIMENSION: </string>
+    <string name="location_name">NAME: </string>
+    <string name="location_dimension">DIMENSION: </string>
+    <string name="unknown_content">UNKNOWN</string>
+    <string name="episode_screen">EpisodeDetails</string>
+    <string name="character_detail_screen">CharacterDetails</string>
+    <string name="no_character_details">No Details Present For This Character</string>
+    <string name="episodename">EPISODE NAME</string>
+    <string name="characterS">CHARACTERS</string>
+    <string name="AIR_DATE">AIR DATE</string>
+</resources>

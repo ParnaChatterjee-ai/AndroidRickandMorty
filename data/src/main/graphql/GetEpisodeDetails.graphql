@@ -1,0 +1,14 @@
+# Query 3: Get details of specific episode by ID
+query GetEpisodeDetailsById($id: ID!) {
+    episode(id:$id){
+        id
+        name
+        air_date
+        episode
+        characters {
+            id
+            name
+            image
+        }
+    }
+}

@@ -1,0 +1,41 @@
+name: workflowCI
+on:
+  pull_request:
+    branches:
+      - '*'  # Trigger on PRs targeting any branch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Check out the code
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      # Step 2: Set up JDK 17 (Adoptium)
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          distribution: 'temurin'  # Use 'temurin' for JDK 17
+          java-version: '17'
+
+      # Step 3: Cache Gradle dependencies
+      - name: Cache Gradle dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.gradle/wrapper, ~/.gradle/caches
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      # Step 4: Build the project
+      - name: Build the project
+        run: ./gradlew build
+
+      # Step 5: Run tests
+      - name: Run tests
+        run: ./gradlew test
+
+      # Step 6: Run Detekt linting
+      - name: Run Detekt (Linting)
+        run: ./gradlew detekt
