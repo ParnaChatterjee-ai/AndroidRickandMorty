@@ -7,9 +7,9 @@ Project Details (used tools ):-
 
 3)  Rest API Details :- https://rickandmortyapi.com/documentation/#graphql
 
-4) NetworkRequest (API Call ) :- GraphQL and ApolloClient 
+4) NetworkRequest (API Call ) :- GraphQL and ApolloClient ,
                                                      GraphQl more efficient for complex data models compare to Retrofit and
-                                                      Query exactly the data we need (no over/under-fetching).
+                                                      Query exactly the data which we need (no over/under-fetching).
 
 5) Dependency Injection :-  Dagger2
 6) Testcase :-  mockk
