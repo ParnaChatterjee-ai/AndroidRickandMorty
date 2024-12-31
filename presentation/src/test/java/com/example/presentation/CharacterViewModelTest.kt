@@ -33,22 +33,25 @@ class CharacterViewModelTest {
     @Test
     fun `should return charactersState is in loading state when loading characters`() =
         runTest(testDispatcher){
+           //When
            val currentState =  characterViewmodel.charactersState.value
+            //Then
             assertEquals(ResultState.Loading,currentState)
     }
 
     @Test
     fun `get list of characters on success`() = runTest(testDispatcher) {
-
+       //Given
         val characters = listOf(
             Characters("a","RickSanchez","https://rickandmortyapi.com/avatar/1.jpeg"),
             Characters("b","MortySmith","https://rickandmortyapi.com/avatar/2.jpeg"),
             Characters("c","SummerSmith","https://rickandmortyapi.com/avatar/3.jpeg"))
 
         coEvery { charactersUseCase.invoke() } returns characters
+        //When
         characterViewmodel.getAllCharacters()
         val currentState =  characterViewmodel.charactersState.value
-        //For checking initial state loading state or not
+        //Then : For checking initial state loading state or not
         assertEquals(ResultState.Loading,currentState)
 
         //Collecting data from flow and compare
@@ -65,13 +68,16 @@ class CharacterViewModelTest {
     }
     @Test
     fun `while fetching characters list test for runtime exception to show error`() = runTest(testDispatcher) {
+        //Given
         val exception = RuntimeException("Error fetching character results")
         val repository = mockk<CharacterRepository>(relaxed = true)
         coEvery { repository.getCharacters() } throws exception
         try {
+           //When
             characterViewmodel.getAllCharacters()
         }
         catch (e :RuntimeException){
+            //Then
             assertEquals("Error fetching character results", ""+e)
         }
     }
