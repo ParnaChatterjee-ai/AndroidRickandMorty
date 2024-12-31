@@ -1,4 +1,4 @@
-Create a POC for Rick and MortyApp which render the list of characters and episodes of TV show.
+Create a POC for Rick and MortyApp which renders the list of characters and episodes of a TV show.
 
 Project Details (used tools ):-
 
@@ -8,7 +8,7 @@ Project Details (used tools ):-
 3)  Rest API Details :- https://rickandmortyapi.com/documentation/#graphql
 
 4) NetworkRequest (API Call ) :- GraphQL and ApolloClient ,
-                                                     GraphQl more efficient for complex data models compare to Retrofit and
+                                                     GraphQl more efficient for complex data models compared to Retrofit and
                                                       Query exactly the data which we need (no over/under-fetching).
 
 5) Dependency Injection :-  Dagger2
